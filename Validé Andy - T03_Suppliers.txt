@@ -1,0 +1,32 @@
+
+CREATE VIEW 
+	T03_Suppliers
+AS 
+	SELECT
+		TIERS.T_TIERS AS Supplier_code,
+		TIERS.T_LIBELLE AS Supplier_name,
+		TIERS.T_COMMENTAIRE AS Global_supplier,
+		TIERS.T_ADRESSE1 AS Address1,
+		TIERS.T_ADRESSE2 AS Address2,
+		TIERS.T_ADRESSE3 AS Address3,
+		TIERS.T_VILLE AS City,
+		TIERS.T_CODEPOSTAL AS ZipCode,
+		TIERS.T_PAYS AS Country_ISO3,
+		TIERSCOMPL.YTC_INCOTERM AS Incoterm,
+		CATALOGU.GCA_LIBREGCA2 AS Incoterm_location,
+		TIERSCOMPL.YTC_DEPOT AS Incoterm_via,
+		TIERSCOMPL.YTC_TABLELIBREFOU1 AS Account_manager,
+		'' AS Min_order_qty,
+		'' AS Min_order_value,
+		TIERS.T_MODEREGLE AS Payment_term_type
+
+	FROM 
+		TIERS
+			INNER JOIN CATALOGU
+				ON
+				CATALOGU.GCA_TIERS = TIERS.T_TIERS
+			INNER JOIN TIERSCOMPL
+				ON 
+				TIERSCOMPL.YTC_TIERS = TIERS.T_TIERS
+		
+;
