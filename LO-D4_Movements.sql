@@ -1,0 +1,19 @@
+
+-- Create view for LO-D4_Movements
+
+CREATE VIEW 
+        [LO-D4_Movements]
+AS 
+        SELECT
+               STKMOUVEMENT.GSM_TIERS AS from_code,
+               STKMOUVEMENT.GSM_TIERS AS to_code,
+               STKMOUVEMENT.GSM_ARTICLE AS Internal_reference,
+               RTINFOS00D.RDD_RDDLIBTEXTE2 AS shipment_number,
+               STKMOUVEMENT.GSM_NATUREORI AS PO_number,
+               STKMOUVEMENT.GSM_DATEMVT AS Movement_date,
+               STKMOUVEMENT.GSM_PHYSIQUE AS Quantity,
+               STKMOUVEMENT.GSM_MONTANT AS Movement_value
+FROM PIECE
+LEFT JOIN STKMOUVEMENT ON GSM_NUMEROORI= GP_NUMERO
+LEFT JOIN RTINFOS00D ON GP_NBTRANSMIS = RDD_CLEDATA
+LEFT JOIN ARTICLE ON GA_ARTICLE=GSM_ARTICLE
