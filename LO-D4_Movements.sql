@@ -7,7 +7,7 @@ AS
         SELECT
                STKMOUVEMENT.GSM_TIERS AS from_code,
                STKMOUVEMENT.GSM_TIERS AS to_code,
-               STKMOUVEMENT.GSM_ARTICLE AS Internal_reference,
+               ARTICLE.GA_CODEARTICLE AS Internal_reference,
                RTINFOS00D.RDD_RDDLIBTEXTE2 AS shipment_number,
                STKMOUVEMENT.GSM_NATUREORI AS PO_number,
                STKMOUVEMENT.GSM_DATEMVT AS Movement_date,
