@@ -1,6 +1,5 @@
 # cbm
 
-----
 
 All the SQL queries have been put into these 2 SP, `insert_BI_AVOCARBON.sql` and `insert_BI_SCEET.sql`.
 
