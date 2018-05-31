@@ -9,9 +9,6 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-
-
-
 CREATE PROCEDURE [dbo].[insert_BI_SCEET] 
 AS
 
