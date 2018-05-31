@@ -12,7 +12,7 @@ GO
 
 
 
-CREATE PROCEDURE [dbo].[insert_BI_AVOCARBON_tst] 
+CREATE PROCEDURE [dbo].[insert_BI_AVOCARBON] 
 AS
 
 
