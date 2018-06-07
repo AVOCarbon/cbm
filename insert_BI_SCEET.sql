@@ -9,7 +9,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 -- 31/05/18 : this procedure is schedule by SQL agent for SCEET Tunisia
--- Used a procedire to do the truncation and the insert
+-- Used a procedure to do the truncation and the insert
 
 
 CREATE PROCEDURE [dbo].[insert_BI_SCEET] 
